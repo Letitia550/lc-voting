@@ -40,18 +40,18 @@
                 </div>
             </div>
 
-            <div class="flex px-2 py-6">
-                <a href="#" class="flex-none">
-                    <img src="https://source.unsplash.com/200x200/?face&crop=face&v=1" alt="avatar" class="w-14 h-14 rounded-xl">
-                </a>
-                <div class="mx-4">
+            <div class="flex flex-1 px-2 py-6">
+                <div class="flex-none">
+                    <a href="#">
+                        <img src="https://source.unsplash.com/200x200/?face&crop=face&v=1" alt="avatar" class="w-14 h-14 rounded-xl">
+                    </a>
+                </div>
+                <div class="w-full mx-4">
                     <h4 class="text-xl font-semibold">
                         <a href="" class="hover:underline">A random title can go here</a>
                     </h4>
                     <div class="text-gray-600 mt-3 line-clamp-3">
-                        Add idea form goes here. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-                        dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not
-                        only five centuries, but also the leap
+                        Add idea form goes here.
                     </div>
 
                     <div class="flex items-center justify-between mt-6">
@@ -65,7 +65,7 @@
 
                         <div class="flex items-center space-x-2">
                             <div class="rounded-full bg-gray-200 text-xxs font-bold text-center px-4 py-2 w-28 h-7 leading-none uppercase">Open</div>
-                            <button class="relative bg-gray-100 hover:bg-gray-200 rounded-full h-7 transition duration-150 easy-in px-3 py-2">
+                            <button class="relative bg-gray-100 border hover:bg-gray-200 rounded-full h-7 transition duration-150 easy-in px-3">
                                 <svg class="w-6 h-6" fill="#d1d5db" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0
                                 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path></svg>
                             </button>
@@ -94,11 +94,11 @@
                 </div>
             </div>
 
-            <div class="flex px-2 py-6">
+            <div class="flex flex-1 px-2 py-6">
                 <a href="#" class="flex-none">
                     <img src="https://source.unsplash.com/200x200/?face&crop=face&v=1" alt="avatar" class="w-14 h-14 rounded-xl">
                 </a>
-                <div class="mx-4">
+                <div class="w-full mx-4">
                     <h4 class="text-xl font-semibold">
                         <a href="" class="hover:underline">A random title can go here</a>
                     </h4>
@@ -119,7 +119,7 @@
 
                         <div class="flex items-center space-x-2">
                             <div class="rounded-full bg-yellow text-white text-xxs font-bold text-center px-4 py-2 w-28 h-7 leading-none uppercase">In progress</div>
-                            <button class="relative bg-gray-100 hover:bg-gray-200 rounded-full h-7 transition duration-150 easy-in px-3 py-2">
+                            <button class="relative bg-gray-100 hover:bg-gray-200 rounded-full h-7 transition duration-150 easy-in px-3">
                                 <svg class="w-6 h-6" fill="#d1d5db" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0
                                 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path></svg>
                             </button>
@@ -142,11 +142,11 @@
                 </div>
             </div>
 
-            <div class="flex px-2 py-6">
+            <div class="flex flex-1 px-2 py-6">
                 <a href="#" class="flex-none">
                     <img src="https://source.unsplash.com/200x200/?face&crop=face&v=1" alt="avatar" class="w-14 h-14 rounded-xl">
                 </a>
-                <div class="mx-4">
+                <div class="w-full mx-4">
                     <h4 class="text-xl font-semibold">
                         <a href="" class="hover:underline">A random title can go here</a>
                     </h4>
@@ -167,7 +167,7 @@
 
                         <div class="flex items-center space-x-2">
                             <div class="rounded-full bg-red text-xxs text-white font-bold text-center px-4 py-2 w-28 h-7 leading-none uppercase">Closed</div>
-                            <button class="relative bg-gray-100 hover:bg-gray-200 rounded-full h-7 transition duration-150 easy-in px-3 py-2">
+                            <button class="relative bg-gray-100 hover:bg-gray-200 rounded-full h-7 transition duration-150 easy-in px-3">
                                 <svg class="w-6 h-6" fill="#d1d5db" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0
                                 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path></svg>
                             </button>
@@ -190,11 +190,11 @@
                 </div>
             </div>
 
-            <div class="flex px-2 py-6">
+            <div class="flex flex-1 px-2 py-6">
                 <a href="#" class="flex-none">
                     <img src="https://source.unsplash.com/200x200/?face&crop=face&v=1" alt="avatar" class="w-14 h-14 rounded-xl">
                 </a>
-                <div class="mx-4">
+                <div class="w-full mx-4">
                     <h4 class="text-xl font-semibold">
                         <a href="" class="hover:underline">A random title can go here</a>
                     </h4>
@@ -215,7 +215,7 @@
 
                         <div class="flex items-center space-x-2">
                             <div class="rounded-full bg-green text-white text-xxs font-bold text-center px-4 py-2 w-28 h-7 leading-none uppercase">Implemented</div>
-                            <button class="relative bg-gray-100 hover:bg-gray-200 rounded-full h-7 transition duration-150 easy-in px-3 py-2">
+                            <button class="relative bg-gray-100 hover:bg-gray-200 rounded-full h-7 transition duration-150 easy-in px-3">
                                 <svg class="w-6 h-6" fill="#d1d5db" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0
                                 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path></svg>
                             </button>
@@ -238,11 +238,11 @@
                 </div>
             </div>
 
-            <div class="flex px-2 py-6">
+            <div class="flex flex-1 px-2 py-6">
                 <a href="#" class="flex-none">
                     <img src="https://source.unsplash.com/200x200/?face&crop=face&v=1" alt="avatar" class="w-14 h-14 rounded-xl">
                 </a>
-                <div class="mx-4">
+                <div class="w-full mx-4">
                     <h4 class="text-xl font-semibold">
                         <a href="" class="hover:underline">A random title can go here</a>
                     </h4>
@@ -263,7 +263,7 @@
 
                         <div class="flex items-center space-x-2">
                             <div class="rounded-full bg-purple text-white text-xxs font-bold text-center px-4 py-2 w-28 h-7 leading-none uppercase">Considering</div>
-                            <button class="relative bg-gray-100 hover:bg-gray-200 rounded-full h-7 transition duration-150 easy-in px-3 py-2">
+                            <button class="relative bg-gray-100 hover:bg-gray-200 rounded-full h-7 transition duration-150 easy-in px-3">
                                 <svg class="w-6 h-6" fill="#d1d5db" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0
                                 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path></svg>
                             </button>
