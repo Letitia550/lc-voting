@@ -52,8 +52,12 @@
 
     <div class="button-container flex items-center justify-between mt-6">
         <div class="flex items-center space-x-4 ml-6">
-            <div class="relative">
+            <div
+                x-data="{ isOpen: false}"
+                class="relative"
+            >
                 <button
+                    @click="isOpen = !isOpen"
                     type="button"
                     class="flex items-center justify-center bg-blue text-white text-sm w-32 h-11 border
                     border-blue transition duration-150 easy-in hover:bg-blue-hover rounded-xl px-6 py-3"
@@ -61,7 +65,13 @@
                     Reply
                 </button>
                 <div class="absolute z-10 shadow-dialog bg-white font-semibold rounded-xl mt-2 text-left text-sm w-104">
-                    <form class="space-y-4 px-4 py-6">
+                    <form
+                        x-cloak
+                        @keydown.escape.window="isOpen = false"
+                        x-show.transition.origin.top.left="isOpen"
+                        @click.away="isOpen = false"
+                        class="space-y-4 px-4 py-6"
+                    >
                         <div>
                             <textarea name="post_comment" id="post_comment" cols="30" rows="4" class=" w-full bg-gray-100 text-sm rounded-xl placeholder-gray-900 border-none px-4 py-2" placeholder="Go ahead, don't be shy. Share tour thoughts...."></textarea>
                         </div>
@@ -90,8 +100,12 @@
                     </form>
                 </div>
             </div>
-            <div class="relative">
+            <div
+                x-data="{ isOpen: false }"
+                class="relative"
+            >
                 <button
+                    @click="isOpen = !isOpen"
                     type="button"
                     class="flex items-center justify-center w-36 h-11 rounded-xl bg-gray-200 border border-gray-200 hover:border-gray-400
                                     text-xs transition duration-150 easy-in px-6 py-3 text-gray-800 text-sm font-semibold"
@@ -100,7 +114,13 @@
                     <svg class="w-6 h-6" fill="#6b7280" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                 </button>
 
-                <div class="absolute z-20 shadow-dialog bg-white font-semibold rounded-xl mt-2 text-left text-sm w-76">
+                <div
+                    x-cloak
+                    @keydown.escape.window="isOpen = false"
+                    x-show.transition.origin.top.left="isOpen"
+                    @click.away="isOpen = false"
+                    class="absolute z-20 shadow-dialog bg-white font-semibold rounded-xl mt-2 text-left text-sm w-76"
+                >
                     <form class="space-y-4 px-4 py-6">
                         <div class="space-y-2">
                             <div>

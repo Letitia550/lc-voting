@@ -63,14 +63,26 @@
                             <div class="text-gray-900">3 Comments</div>
                         </div>
 
-                        <div class="flex items-center space-x-2">
+                        <div
+                            x-data="{ isOpen: false}"
+                            class="flex items-center space-x-2"
+                        >
                             <div class="rounded-full bg-gray-200 text-xxs font-bold text-center px-4 py-2 w-28 h-7 leading-none uppercase">Open</div>
-                            <button class="relative bg-gray-100 border hover:bg-gray-200 rounded-full h-7 transition duration-150 easy-in px-3">
+                            <button
+                                @click="isOpen = !isOpen"
+                                class="relative bg-gray-100 border hover:bg-gray-200 rounded-full h-7 transition duration-150 easy-in px-3"
+                            >
                                 <svg class="w-6 h-6" fill="#d1d5db" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0
                                 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path></svg>
                             </button>
                             <div class="ml-8">
-                                <ul class="absolute w-44 font-semibold bg-white shadow-dialog rounded-xl py-3 text-left">
+                                <ul
+                                    x-cloak
+                                    @keydown.escape.window="isOpen = false"
+                                    x-show.transition.origin.top.left="isOpen"
+                                    @click.away="isOpen = false"
+                                    class="absolute w-44 font-semibold bg-white shadow-dialog rounded-xl py-3 text-left"
+                                >
                                     <li> <a href="#" class="hover:bg-gray-100 transition duration-150 block easy-in px-5 py-3">Mark as Spam</a></li>
                                     <li> <a href="#" class="hover:bg-gray-100 transition duration-150 block easy-in px-5 py-3">Delete Post</a></li>
                                 </ul>
