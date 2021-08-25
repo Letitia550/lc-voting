@@ -51,16 +51,125 @@
     </div>
 
     <div class="button-container flex items-center justify-between mt-6">
-        <div class="flex items-center justify-center space-x-4 ml-6">
-            <button class="bg-blue text-white text-xs w-32 h-11 transition duration-150 easy-in hover:bg-blue-hover rounded-xl">Reply</button>
-            <button
-                type="button"
-                class="flex items-center justify-center w-36 h-11 rounded-xl bg-gray-200 border border-gray-200 hover:border-gray-400
-                                text-xs transition duration-150 easy-in px-6 py-3 text-gray-800 text-xs font-semibold"
-            >
-                <span>Set Status</span>
-                <svg class="w-6 h-6 ml-2" fill="#6b7280" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-            </button>
+        <div class="flex items-center space-x-4 ml-6">
+            <div class="relative">
+                <button
+                    type="button"
+                    class="flex items-center justify-center bg-blue text-white text-sm w-32 h-11 border
+                    border-blue transition duration-150 easy-in hover:bg-blue-hover rounded-xl px-6 py-3"
+                >
+                    Reply
+                </button>
+                <div class="absolute z-10 shadow-dialog bg-white font-semibold rounded-xl mt-2 text-left text-sm w-104">
+                    <form class="space-y-4 px-4 py-6">
+                        <div>
+                            <textarea name="post_comment" id="post_comment" cols="30" rows="4" class=" w-full bg-gray-100 text-sm rounded-xl placeholder-gray-900 border-none px-4 py-2" placeholder="Go ahead, don't be shy. Share tour thoughts...."></textarea>
+                        </div>
+
+                        <div class="flex items-center space-x-3">
+                            <button
+                                type="button"
+                                class="flex items-center text-white justify-center w-1/2 h-11 rounded-xl bg-blue border border-blue-300 hover:border-blue
+                                text-xs font-semibold transition duration-150 easy-in px-6 py-3"
+                            >
+                                Post Comment
+                            </button>
+
+                            <button
+                                type="button"
+                                class="flex items-center justify-center w-32 h-11 rounded-xl bg-gray-200 border border-gray-200 hover:border-gray-400
+                                text-xs font-semibold transition duration-150 easy-in px-6 py-3"
+                            >
+                                <svg class="text-gray-600 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path
+                                        fill-rule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0
+                                        012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="ml-1">Attach</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="relative">
+                <button
+                    type="button"
+                    class="flex items-center justify-center w-36 h-11 rounded-xl bg-gray-200 border border-gray-200 hover:border-gray-400
+                                    text-xs transition duration-150 easy-in px-6 py-3 text-gray-800 text-sm font-semibold"
+                >
+                    <span>Set Status</span>
+                    <svg class="w-6 h-6" fill="#6b7280" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </button>
+
+                <div class="absolute z-20 shadow-dialog bg-white font-semibold rounded-xl mt-2 text-left text-sm w-76">
+                    <form class="space-y-4 px-4 py-6">
+                        <div class="space-y-2">
+                            <div>
+                                <label class="inline-flex items-center">
+                                        <input class="border-none bg-gray-200 text-purple" type="radio" name="radio-direct" value="1">
+                                        <span class="text-gray-900 text-sm font-semibold ml-2">Open</span>
+                                </label>
+                            </div>
+                            <div>
+                                <label class="inline-flex items-center">
+                                    <input class="border-none bg-gray-200 text-purple" type="radio" name="radio-direct" value="1">
+                                    <span class="text-gray-900 text-sm font-semibold ml-2">Considering</span>
+                                </label>
+                            </div>
+                            <div>
+                                <label class="inline-flex items-center">
+                                    <input class="border-none bg-gray-200 text-purple" type="radio" name="radio-direct" value="1">
+                                    <span class="text-gray-900 text-sm font-semibold ml-2">In Progress</span>
+                                </label>
+                            </div>
+                            <div>
+                                <label class="inline-flex items-center">
+                                    <input class="border-none bg-gray-200 text-purple" type="radio" name="radio-direct" value="1">
+                                    <span class="text-gray-900 text-sm font-semibold ml-2">Implemented</span>
+                                </label>
+                            </div>
+                            <div>
+                                <label class="inline-flex items-center">
+                                    <input class="border-none bg-gray-200 text-purple" type="radio" name="radio-direct" value="1">
+                                    <span class="text-gray-900 text-sm font-semibold ml-2">Closed</span>
+                                </label>
+                            </div>
+
+                            <div>
+                                <textarea name="post_comment" id="post_comment" cols="30" rows="3" class="w-full mt-3 w-full bg-gray-100  text-xs font-semibold rounded-xl placeholder-gray-500 border-none px-4 py-4" placeholder="Add an update comment(optional)"></textarea>
+                            </div>
+
+                            <div class="flex items-center space-x-3">
+                                <button
+                                    type="button"
+                                    class="flex items-center justify-center w-32 h-10 rounded-xl bg-gray-200 border border-gray-200 hover:border-gray-400
+                                text-xs font-semibold transition duration-150 easy-in px-6 py-3"
+                                >
+                                    <svg class="text-gray-600 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path
+                                            fill-rule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0
+                                        012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="ml-1">Attach</span>
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="flex items-center text-white justify-center w-1/2 h-10 rounded-xl bg-blue border border-blue-300 hover:border-blue
+                                text-xs font-semibold transition duration-150 easy-in px-6 py-3"
+                                >
+                                    Update
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" name="notify_voters" checked="" class="rounded bg-gray-200">
+                                <span class="ml-2 text-xs text-gray-500">Notify all voters</span>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
 
         <div class="flex items-center space-x-3">

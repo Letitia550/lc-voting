@@ -89,7 +89,7 @@
                             <button
                                 type="button"
                                 class="flex items-center justify-center w-1/2 h-11 rounded-xl bg-gray-200 border border-gray-200 hover:border-gray-400
-                                font-semibolf text-xs transition duration-150 easy-in px-6 py-3"
+                                font-semibold text-xs transition duration-150 easy-in px-6 py-3"
                             >
                                 <svg class="text-gray-600 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path
                                         fill-rule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0
