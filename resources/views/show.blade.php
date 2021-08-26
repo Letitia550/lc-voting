@@ -7,13 +7,13 @@
     </div>
 
     <div class="idea-container mt-4 bg-white rounded-xl flex">
-        <div class="flex flex-1 px-4 py-6">
-            <div class="flex-none">
+        <div class="flex flex-col md:flex-row flex-1 px-4 py-6">
+            <div class="flex-none mx-2 md:mx-4">
                 <a href="#">
                     <img src="https://source.unsplash.com/200x200/?face&crop=face&v=1" alt="avatar" class="w-14 h-14 rounded-xl">
                 </a>
             </div>
-            <div class="w-full mx-4">
+            <div class="w-full mx-2 md:mx-4">
                 <h4 class="text-xl font-semibold">
                     <a href="" class="hover:underline">A random title can go here</a>
                 </h4>
@@ -21,10 +21,10 @@
                     Add idea form goes here.
                 </div>
 
-                <div class="flex items-center justify-between mt-6">
+                <div class="flex flex-col md:flex-row md:items-center justify-between mt-6">
                     <div class="flex items-center text-xs text-gray-400 font-semibold space-x-2">
-                        <div class="text-black font-bold">John Doe</div>
-                        <div>&bull;</div>
+                        <div class="hidden md:block text-black font-bold">John Doe</div>
+                        <div class="hidden md:block">&bull;</div>
                         <div>10 hours ago</div>
                         <div>&bull;</div>
                         <div>Category</div>
@@ -32,18 +32,40 @@
                         <div class="text-gray-900">3 Comments</div>
                     </div>
 
-                    <div class="flex items-center space-x-2">
+                    <div
+                        x-data="{ isOpen: false}"
+                        class="flex items-center space-x-2 mt-4 md:mt-0"
+                    >
                         <div class="rounded-full bg-gray-200 text-xxs font-bold text-center px-4 py-2 w-28 h-7 leading-none uppercase">Open</div>
-                        <button class="relative bg-gray-100 border hover:bg-gray-200 rounded-full h-7 transition duration-150 easy-in px-3">
+                        <button
+                            @click="isOpen = !isOpen"
+                            class="relative bg-gray-100 border hover:bg-gray-200 rounded-full h-7 transition duration-150 easy-in px-3"
+                        >
                             <svg class="w-6 h-6" fill="#d1d5db" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0
                                 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path></svg>
-                        </button>
-                        <div class="ml-8">
-                            <ul class="hidden absolute w-44 font-semibold bg-white shadow-dialog rounded-xl py-3 text-left">
+
+                            <ul
+                                x-cloak
+                                @keydown.escape.window="isOpen = false"
+                                x-show.transition.origin.top.left="isOpen"
+                                @click.away="isOpen = false"
+                                class="absolute z-10 w-44 font-semibold bg-white shadow-dialog rounded-xl py-3 text-left
+                                           md:ml-8 top-8 md:top-6 right-0 md:left-0"
+                            >
                                 <li> <a href="#" class="hover:bg-gray-100 transition duration-150 block easy-in px-5 py-3">Mark as Spam</a></li>
                                 <li> <a href="#" class="hover:bg-gray-100 transition duration-150 block easy-in px-5 py-3">Delete Post</a></li>
                             </ul>
+                        </button>
+                    </div>
+
+                    <div class="flex items-center md:hidden mt-4 md:mt-0">
+                        <div class="bg-gray-100 rounded-xl text-center h-10 px-4 py-2 pr-8 ">
+                            <div class="text-sm font-semibold leading-none">12</div>
+                            <div class="text-xs font-semibold text-gray-400 leading-none">Votes</div>
                         </div>
+
+                        <button class="w-20 bg-gray-200 border border-white transition duration-150 easy-in font-bold text-xxs uppercase
+                            rounded-xl px-4 py-3 -mx-5">Vote</button>
                     </div>
                 </div>
             </div>
@@ -51,7 +73,7 @@
     </div>
 
     <div class="button-container flex items-center justify-between mt-6">
-        <div class="flex items-center space-x-4 ml-6">
+        <div class="flex flex-col md:flex-row items-center space-x-4 md:ml-6">
             <div
                 x-data="{ isOpen: false}"
                 class="relative"
@@ -64,7 +86,7 @@
                 >
                     Reply
                 </button>
-                <div class="absolute z-10 shadow-dialog bg-white font-semibold rounded-xl mt-2 text-left text-sm w-104">
+                <div class="absolute z-10 shadow-dialog bg-white font-semibold rounded-xl mt-2 text-left text-sm w-64 md:w-104">
                     <form
                         x-cloak
                         @keydown.escape.window="isOpen = false"
@@ -76,10 +98,10 @@
                             <textarea name="post_comment" id="post_comment" cols="30" rows="4" class=" w-full bg-gray-100 text-sm rounded-xl placeholder-gray-900 border-none px-4 py-2" placeholder="Go ahead, don't be shy. Share tour thoughts...."></textarea>
                         </div>
 
-                        <div class="flex items-center space-x-3">
+                        <div class="flex flex-col md:flex-row items-center md:space-x-3">
                             <button
                                 type="button"
-                                class="flex items-center text-white justify-center w-1/2 h-11 rounded-xl bg-blue border border-blue-300 hover:border-blue
+                                class="flex items-center text-white justify-center w-full md:w-1/2 h-11 rounded-xl bg-blue border border-blue-300 hover:border-blue
                                 text-xs font-semibold transition duration-150 easy-in px-6 py-3"
                             >
                                 Post Comment
@@ -87,7 +109,7 @@
 
                             <button
                                 type="button"
-                                class="flex items-center justify-center w-32 h-11 rounded-xl bg-gray-200 border border-gray-200 hover:border-gray-400
+                                class="flex items-center justify-center w-full mt-2 md:mt-0 md:w-32 h-11 rounded-xl bg-gray-200 border border-gray-200 hover:border-gray-400
                                 text-xs font-semibold transition duration-150 easy-in px-6 py-3"
                             >
                                 <svg class="text-gray-600 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path
@@ -108,7 +130,7 @@
                     @click="isOpen = !isOpen"
                     type="button"
                     class="flex items-center justify-center w-36 h-11 rounded-xl bg-gray-200 border border-gray-200 hover:border-gray-400
-                                    text-xs transition duration-150 easy-in px-6 py-3 text-gray-800 text-sm font-semibold"
+                                    text-xs transition duration-150 easy-in px-6 py-3 text-gray-800 text-sm font-semibold mt-2 md:mt-0"
                 >
                     <span>Set Status</span>
                     <svg class="w-6 h-6" fill="#6b7280" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
@@ -119,7 +141,7 @@
                     @keydown.escape.window="isOpen = false"
                     x-show.transition.origin.top.left="isOpen"
                     @click.away="isOpen = false"
-                    class="absolute z-20 shadow-dialog bg-white font-semibold rounded-xl mt-2 text-left text-sm w-76"
+                    class="absolute z-20 shadow-dialog bg-white font-semibold rounded-xl mt-2 text-left text-sm w-64 md:w-76"
                 >
                     <form class="space-y-4 px-4 py-6">
                         <div class="space-y-2">
@@ -192,7 +214,7 @@
             </div>
         </div>
 
-        <div class="flex items-center space-x-3">
+        <div class="hidden md:flex items-center space-x-3">
             <div class="bg-white font-semibold text-center rounded-xl px-3 py-2">
                 <div class="text-xl leading-snug">12</div>
                 <div class="text-gray-400 text-xs leading-none">Votes</div>
@@ -207,15 +229,15 @@
         </div>
     </div> <!----end buttons-container--->
 
-    <div class="comments-container relative space-y-6 ml-22 my-8 pt-4 mt-1">
+    <div class="comments-container relative space-y-6 md:ml-22 my-8 pt-4 mt-1">
         <div class="comment-container relative mt-4 bg-white rounded-xl flex">
-            <div class="flex flex-1 px-4 py-6">
+            <div class="flex flex-col md:flex-row flex-1 px-4 py-6">
                 <div class="flex-none">
                     <a href="#">
                         <img src="https://source.unsplash.com/200x200/?face&crop=face&v=3" alt="avatar" class="w-14 h-14 rounded-xl">
                     </a>
                 </div>
-                <div class="w-full mx-4">
+                <div class="w-full md:mx-4">
 {{--                    <h4 class="text-xl font-semibold">--}}
 {{--                        <a href="" class="hover:underline">A random title can go here</a>--}}
 {{--                    </h4>--}}
@@ -234,18 +256,30 @@
 {{--                            <div class="text-gray-900">3 Comments</div>--}}
                         </div>
 
-                        <div class="flex items-center space-x-2">
+                        <div
+                            x-data="{ isOpen: false}"
+                            class="flex items-center space-x-2 mt-4 md:mt-0"
+                        >
                             <div class="rounded-full bg-gray-200 text-xxs font-bold text-center px-4 py-2 w-28 h-7 leading-none uppercase">Open</div>
-                            <button class="relative bg-gray-100 border hover:bg-gray-200 rounded-full h-7 transition duration-150 easy-in px-3">
+                            <button
+                                @click="isOpen = !isOpen"
+                                class="relative bg-gray-100 border hover:bg-gray-200 rounded-full h-7 transition duration-150 easy-in px-3"
+                            >
                                 <svg class="w-6 h-6" fill="#d1d5db" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0
                                 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path></svg>
-                            </button>
-                            <div class="ml-8">
-                                <ul class="hidden absolute w-44 font-semibold bg-white shadow-dialog rounded-xl py-3 text-left">
+
+                                <ul
+                                    x-cloak
+                                    @keydown.escape.window="isOpen = false"
+                                    x-show.transition.origin.top.left="isOpen"
+                                    @click.away="isOpen = false"
+                                    class="absolute z-10 w-44 font-semibold bg-white shadow-dialog rounded-xl py-3 text-left
+                                           md:ml-8 top-8 md:top-6 right-0 md:left-0"
+                                >
                                     <li> <a href="#" class="hover:bg-gray-100 transition duration-150 block easy-in px-5 py-3">Mark as Spam</a></li>
                                     <li> <a href="#" class="hover:bg-gray-100 transition duration-150 block easy-in px-5 py-3">Delete Post</a></li>
                                 </ul>
-                            </div>
+                            </button>
                         </div>
                     </div>
                 </div>
