@@ -1,7 +1,10 @@
 <x-app-layout>
     <div>
         <a href="#" class="flex items-center hover:underline font-semibold">
-            <svg class="w-6 h-6" fill="#4b5563" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+            <svg class="w-6 h-6" fill="#4b5563" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd"
+                 d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414
+                 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
             <span class="ml-2">All ideas</span>
         </a>
     </div>
@@ -15,17 +18,17 @@
             </div>
             <div class="w-full mx-2 md:mx-4">
                 <h4 class="text-xl font-semibold">
-                    <a href="" class="hover:underline">A random title can go here</a>
+                    <a href="" class="hover:underline">{{ $idea->title }}</a>
                 </h4>
                 <div class="text-gray-600 mt-3 line-clamp-3">
-                    Add idea form goes here.
+                    {{ $idea->description }}
                 </div>
 
                 <div class="flex flex-col md:flex-row md:items-center justify-between mt-6">
                     <div class="flex items-center text-xs text-gray-400 font-semibold space-x-2">
-                        <div class="hidden md:block text-black font-bold">John Doe</div>
+                        <div class="hidden md:block text-black font-bold">{{ $idea->user->name }}</div>
                         <div class="hidden md:block">&bull;</div>
-                        <div>10 hours ago</div>
+                        <div> {{ $idea->created_at->diffForHumans() }}</div>
                         <div>&bull;</div>
                         <div>Category</div>
                         <div>&bull;</div>
@@ -41,8 +44,10 @@
                             @click="isOpen = !isOpen"
                             class="relative bg-gray-100 border hover:bg-gray-200 rounded-full h-7 transition duration-150 easy-in px-3"
                         >
-                            <svg class="w-6 h-6" fill="#d1d5db" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0
-                                11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path></svg>
+                            <svg class="w-6 h-6" fill="#d1d5db" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path
+                                 d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0
+                                 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                            </svg>
 
                             <ul
                                 x-cloak
@@ -64,8 +69,10 @@
                             <div class="text-xs font-semibold text-gray-400 leading-none">Votes</div>
                         </div>
 
-                        <button class="w-20 bg-gray-200 border border-white transition duration-150 easy-in font-bold text-xxs uppercase
-                            rounded-xl px-4 py-3 -mx-5">Vote</button>
+                        <button class="w-20 bg-gray-200 border border-white transition duration-150 easy-in
+                                font-bold text-xxs uppercase rounded-xl px-4 py-3 -mx-5">
+                            Vote
+                        </button>
                     </div>
                 </div>
             </div>
@@ -177,7 +184,7 @@
                             </div>
 
                             <div>
-                                <textarea name="post_comment" id="post_comment" cols="30" rows="3" class="w-full mt-3 w-full bg-gray-100  text-xs font-semibold rounded-xl placeholder-gray-500 border-none px-4 py-4" placeholder="Add an update comment(optional)"></textarea>
+                                <textarea name="post_comment" id="post_comment" cols="30" rows="3" class="w-full mt-3 w-full bg-gray-100 text-xs font-semibold rounded-xl placeholder-gray-500 border-none px-4 py-4" placeholder="Add an update comment(optional)"></textarea>
                             </div>
 
                             <div class="flex items-center space-x-3">
