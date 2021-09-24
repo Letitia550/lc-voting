@@ -65,49 +65,37 @@
                 >
                     <div class="text-center px-6 py-2 pt-6">
                         <h3 class="font-semibold text-base">Add an idea</h3>
-                        <p class="text-xs mt-4">Let us know what you would like and we we'll take a look over!</p>
+                        <p class="text-xs mt-4">
+                            @auth
+                                Let us know what you would like and we we'll take a look over!
+                            @else
+                                Please login to create an idea.
+                            @endauth
+                        </p>
                     </div>
 
-                    <form action="#" method="POST" class="space-y-4 px-4 py-6">
-                        <div>
-                            <input type="text" placeholder="Your Idea" class=" border-none text-sm w-full bg-gray-100 rounded-xl placeholder-gray-900 px-4 py-2">
-                        </div>
-
-                        <div>
-                            <select name="category_add" id="category_add" class="w-full bg-gray-100 text-sm rounded-xl border-none px-4 py-2">
-                                <option value="Category One">Category One</option>
-                                <option value="Category Two">Category Two</option>
-                                <option value="Category Three">Category Three</option>
-                                <option value="Category Four">Category Four</option>
-                            </select>
-                        </div>
-
-                        <div>
-                           <textarea name="idea" id="idea" cols="30" rows="4" class="w-full bg-gray-100 rounded-xl placeholder-gray-900 text-sm px-4 py-2 border-none">Describe your idea</textarea>
-                        </div>
-
-                        <div class="flex items-center justify-between space-x-3">
-                            <button
-                                type="button"
-                                class="flex items-center justify-center w-1/2 h-11 rounded-xl bg-gray-200 border border-gray-200 hover:border-gray-400
-                                font-semibold text-xs transition duration-150 easy-in px-6 py-3"
+                    @auth
+                        <livewire:create-idea />
+                    @else
+                        <div class="my-6 text-center">
+                            <a
+                                href="{{ route('login') }}"
+                                class="inline-block justify-center w-1/2 h-11 rounded-xl bg-blue border border-blue hover:bg-blue-hover
+                                    font-semibolf text-xs text-white transition duration-150 easy-in px-6 py-3"
                             >
-                                <svg class="text-gray-600 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path
-                                        fill-rule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0
-                                        012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clip-rule="evenodd"></path>
-                                </svg>
-                                <span class="ml-1">Attach</span>
-                            </button>
+                                <span class="ml-1">Login</span>
+                            </a>
 
-                            <button
-                                type="button"
-                                class="flex items-center justify-center w-1/2 h-11 rounded-xl bg-blue border border-blue hover:bg-blue-hover
-                                font-semibolf text-xs text-white transition duration-150 easy-in px-6 py-3"
+                            <a
+                                href="{{ route('register') }}"
+                                class="inline-block justify-center w-1/2 h-11 rounded-xl bg-gray-200 border border-gray-200 hover:border-gray-400
+                                font-semibold text-xs transition duration-150 easy-in px-6 py-3 mt-4"
                             >
-                                <span>Submit</span>
-                            </button>
+                                Sign Up
+                            </a>
                         </div>
-                    </form>
+                    @endauth
+
                 </div>
             </div>
 
