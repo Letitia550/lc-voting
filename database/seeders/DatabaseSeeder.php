@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Idea;
 use App\Models\Status;
 use App\Models\User;
+use App\Models\Vote;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -35,5 +36,17 @@ class DatabaseSeeder extends Seeder
         Status::factory()->create(['name' => 'Closed', 'classes' => 'bg-red text-white']);
 
         Idea::factory(100)->create();
+
+        //Generate unique votes . Ensure idea_id and user_id are unique for each row
+        foreach(User::all() as $user) {
+            foreach (Idea::all() as $idea) {
+                if($idea->id % 2 === 0) {
+                    Vote::factory()->create([
+                        'user_id' => $user->id,
+                        'idea_id' => $idea->id
+                    ]);
+                }
+            }
+        }
     }
 }

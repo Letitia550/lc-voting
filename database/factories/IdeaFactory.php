@@ -25,9 +25,9 @@ class IdeaFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => User::factory(),
-            'category_id' => Category::factory(),
-            'status_id' => Status::factory(),
+            'user_id' => User::count() > 0 ? User::all()->random()->id : User::factory(),
+            'category_id' => Category::count() > 0 ? Category::all()->random()->id : Category::factory(),
+            'status_id' => Status::count() > 0 ? Status::all()->random()->id : Status::factory(),
             'title' => ucwords($this->faker->words(4, true)),
             'description' => $this->faker->paragraph(5),
         ];
