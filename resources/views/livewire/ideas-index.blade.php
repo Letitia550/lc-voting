@@ -37,6 +37,8 @@
     </div> <!-- end ideas-container -->
 
     <div class="my-8">
-        {{ $ideas->links() }}
-    </div>
+        {{--{{ $ideas->links() }} --}}
+        <!-- pentru paginare dupa status -->
+        {{ $ideas->appends(request()->query())->links() }}
+</div>
 </div>
