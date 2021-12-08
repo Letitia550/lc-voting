@@ -1,11 +1,11 @@
 <x-app-layout>
     <div>
-        <a href="{{url('http://lcvoting.project')}}" class="flex items-center hover:underline font-semibold">
+        <a href="{{ $backUrl }}" class="flex items-center hover:underline font-semibold">
             <svg class="w-6 h-6" fill="#4b5563" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd"
                  d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414
                  1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
             </svg>
-            <span>All ideas</span>
+            <span>All ideas (or back to chosen category and filters)</span>
         </a>
     </div>
 

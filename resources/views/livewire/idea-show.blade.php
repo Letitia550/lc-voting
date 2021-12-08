@@ -2,14 +2,14 @@
 
     <div class="idea-container mt-4 bg-white rounded-xl flex">
         <div class="flex flex-col md:flex-row flex-1 px-4 py-6">
-            <div class="flex-none mx-2 md:mx-4">
+            <div class="flex-none mx-2">
                 <a href="#">
                     <img src="https://source.unsplash.com/200x200/?face&crop=face&v=1" alt="avatar" class="w-14 h-14 rounded-xl">
                 </a>
             </div>
             <div class="w-full mx-2 md:mx-4">
-                <h4 class="text-xl font-semibold">
-                    <a href="" class="hover:underline">{{ $idea->title }}</a>
+                <h4 class="text-xl font-semibold mt-2 md:mt-0">
+                   {{ $idea->title }}
                 </h4>
                 <div class="text-gray-600 mt-3 line-clamp-3">
                     {{ $idea->description }}
