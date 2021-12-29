@@ -45,21 +45,4 @@
             <span>Submit</span>
         </button>
     </div>
-
-    <div>
-        @if (session('success_message'))
-            <div
-                x-data="{ isVisibile: true }"
-                x-init="
-                    setTimeout(() => {
-                        isVisibile = false;
-                    }, 5000)
-                "
-                x-show.transition.duration.1000ms="isVisibile"
-                class="text-green mt-4"
-            >
-                {{ session('success_message') }}
-            </div>
-        @endif
-    </div>
 </form>
