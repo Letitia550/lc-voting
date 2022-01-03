@@ -62,6 +62,9 @@
             isError = false
             showNotification(message)
         })
+        Livewire.on('commentWasAdded', message => {
+                showNotification(message)
+        })
 @endif
         "
     x-show="isOpen"
