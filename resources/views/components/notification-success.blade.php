@@ -65,6 +65,9 @@
         Livewire.on('commentWasAdded', message => {
                 showNotification(message)
         })
+        Livewire.on('commentWasUpdated', message => {
+                showNotification(message)
+        })
 @endif
         "
     x-show="isOpen"
